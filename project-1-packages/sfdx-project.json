@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "project-1-packages",
+  "namespace": "",
+  "sfdcLoginUrl": "https://resilient-koala-bqenr5-dev-ed.my.salesforce.com/",
+  "sourceApiVersion": "52.0"
+}
