@@ -1,0 +1,28 @@
+<template>
+    <div>
+        <lightning-button label="Sign Up" onclick={showModal}></lightning-button>
+    </div>
+    <template if:true={openModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading" aria-modal="true" aria-describedby="modal-content" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon icon-name="utility:close" alternative-text="Close this window" size="large" variant="bare-inverse" onclick={closeModal} class="slds-modal__close"></lightning-button-icon>
+                    <h2 id="modal-heading" class="slds-modal__title slds-hyphenate">Account Registration</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content">
+                    <template if:false={successful}>
+                        <c-signup-form></c-signup-form>
+                    </template>
+                    <template if:true={successful}>
+                        <p>Signup was successful! You may now close the window.</p>
+                    </template>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" title="Cancel" onclick={closeModal} ></lightning-button>
+                    <lightning-button label="Submit" variant="brand" title="Submit" onclick={submit} ></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

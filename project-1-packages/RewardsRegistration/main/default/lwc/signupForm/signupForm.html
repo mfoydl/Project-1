@@ -1,0 +1,60 @@
+<template>
+    <!-- Sal First Last-->
+    <!-- Email Signup for alerts-->
+    <!-- Password -->
+    <!-- Birthday [month][day] -->
+    <!-- Billing address -->
+    <!-- agree to terms of service-->
+
+    <div>
+        <div class='slds-grid slds-gutters'>
+            <div class='slds-col slds-size_1-of-2'>
+                <lightning-input type='text' label='First Name' required></lightning-input>
+            </div>
+            <div class='slds-col slds-size_1-of-2'>
+                <lightning-input type='text' label='Last Name' required></lightning-input>
+            </div>
+        </div>
+
+        <div class="slds-p-top_medium ">
+            <lightning-input 
+                type='email' 
+                label='Email' 
+                pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+"
+                message-when-pattern-mismatch="Please enter a valid email address"
+                required></lightning-input>
+        </div>
+
+        <div class="slds-p-top_medium slds-p-bottom_medium">
+            <lightning-input 
+                type="tel" 
+                label="Phone Number" 
+                name="phone-number" 
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="555-555-5555"
+                required>
+            </lightning-input>
+        </div>
+        
+        <div class="">
+            <lightning-input 
+                type="date" 
+                name="birthdate" 
+                label="Birthdate" 
+                date-style="short"
+                placeholder="DD/MM/YYYY"
+                required></lightning-input>
+        </div>
+
+        <div class="slds-p-top_large slds-p-bottom_medium">
+            <lightning-input 
+                type="checkbox" 
+                label="By checking this box you agree to the terms of use and privacy agreement" 
+                name="serviceAgreement" 
+                required>
+            </lightning-input>
+        </div>
+        
+    </div>
+
+</template>
