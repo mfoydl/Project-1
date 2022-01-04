@@ -1,16 +1,9 @@
 import { LightningElement, api } from 'lwc';
-import NAME_FIELD from '@salesforce/schema/Account.Name';
-import ADDRESS_FIELD from '@salesforce/schema/Account.BillingAddress';
-import BIRTHDATE_FIELD from '@salesforce/schema/Contact.Birthdate';
-import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
-
+import createAccountFromForm from '@salesforce/apex/AccountHandler.createAccountFromForm';
 
 export default class SignupForm extends LightningElement {
 
-    nameField = NAME_FIELD;
-    addressField = ADDRESS_FIELD;
-    birthdateField = BIRTHDATE_FIELD;
-    emailField = EMAIL_FIELD;
+    @api errorText;
 
     stateOptions = [
         {label: "IL", value: 'IL'},
@@ -21,49 +14,45 @@ export default class SignupForm extends LightningElement {
 
     contactId;
 
-    @api startSubmit(){
-        let submitter = this.template.querySelector('.AccountForm lightning-button');
-        //this.validateFormData();
-        //submitter.click();
-    }
+    @api submitRegistration(){
 
-    @api handleSubmit(event){
-        event.preventDefault();
+        let formIsValid = this.validateFormData();
 
-        //let accountForm = this.template.querySelector('.AccountForm');
-        //console.log(accountForm);
-        console.log(event.detail);
-        //accountForm.submit(accountForm.fields);
+        if(!formIsValid) return;
 
-    }
+        let firstName = this.template.querySelector('.firstName');
+        let lastName = this.template.querySelector('.lastName');
+        let name = `${firstName} ${lastName}`;
+        let email = this.template.querySelector('.email');
+        let phone = this.template.querySelector('.phoneNumber');
+        let birthday = this.template.querySelector('.birthday');
 
-    handleAccountSuccess(event){
-        console.log('success: ', JSON.stringify(event.detail));
-        //submit
-    }
+        createAccountFromForm(email, name, birthday, phone)
+        .then(()=>{
+            console.log('success');
+        })
+        .catch((error)=>{
+            this.errorText = error;
+        })
 
-    get getStateOptions(){
-        return this.stateOptions;
     }
 
     validateFormData(){
-        let AccountForm = this.template.querySelector('.AccountForm');
-        let contactForm = this.template.querySelector('.ContactForm');
 
-        let namePattern = /[a-z,A-Z]*\s[a-z,A-Z]*/;
-        let emailPattern = /./;
-        let birthdatePattern = /\d{1,2}\/\d{1,2}\/(\d{2}|\d{4})/;
-        let zipPattern = /\n{5}/;
+        let fields = this.template.querySelectorAll('lightning-input');
+        let allValid = true;
 
-        let nameField = this.template.querySelector('.AccountForm .name-field');
-        let billingField = this.template.querySelector('.AccountForm .billing-field');
+        fields.forEach(field => {
+            field.reportValidity();
+            if(!field.checkValidity()) allValid = false;
+        });
 
-        let nameValue = this.template.querySelector('.AccountForm .name-field input[name=Name]');
-        let streetValue = this.template.querySelector('.AccountForm .billing-field textarea[name=street]');
+        return allValid;
+    }
 
-        console.log(nameField);
-        console.log(billingField);
-        console.log(nameValue);
-        console.log(streetValue);
+
+
+    get getStateOptions(){
+        return this.stateOptions;
     }
 }

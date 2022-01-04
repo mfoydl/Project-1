@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-size_2-of-2">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Try Something NEW
+            <template if:true = {products.data}>
+                <lightning-carousel>
+                        <template for:each={products.data} for:item="item">
+                            <lightning-carousel-image
+                                key = {item.Name}
+                                src = "https://www.lightningdesignsystem.com/assets/images/carousel/carousel-01.jpg"
+                                header = {item.Name}
+                                description = {item.Description}
+                                alternative-text = {item.Description}
+                                href = "javascript:void(0);">
+                            </lightning-carousel-image>
+                        </template>
+                </lightning-carousel>
+            </template>
+        </div>
+    </div>
+    
+</template>

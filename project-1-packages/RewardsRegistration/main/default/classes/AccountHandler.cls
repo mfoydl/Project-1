@@ -11,16 +11,41 @@ public with sharing class AccountHandler {
         Insert newContacts;
     }
 
-    public static void createAccountContact(Account acc){
+    public static Contact createAccountContact(Account acc){
         
         Contact newContact = new Contact();
-        String accName = acc.name;
-        String contactName = accName.split(' ');
 
-        newContact.firstName = contactName[0];
-        newContact.lastName = contactName[1];
+        newContact.lastName = acc.name;
         newContact.accountId = acc.id;
 
         return newContact;
+    }
+
+    @AuraEnabled
+    public static void createAccountFromForm(String email, String name, String birthdate, string phone){
+        try {
+            Account newAccount = new Account();
+            
+            newAccount.name = name;
+
+            Insert newAccount;
+
+            updateAccountContactDetails(email,name,Date.parse(birthdate),phone);
+
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+
+    }
+
+    private static void updateAccountContactDetails(String email, String name, Date birthdate, String phone){
+        Contact accountContact = [SELECT firstName,email,mobilePhone,birthdate FROM Contact WHERE lastName = :name LIMIT 1 ];
+
+        accountContact.firstName = name;
+        accountContact.email = email;
+        accountContact.mobilephone = phone;
+        accountContact.birthdate = birthdate;
+
+        Update accountContact;
     }
 }

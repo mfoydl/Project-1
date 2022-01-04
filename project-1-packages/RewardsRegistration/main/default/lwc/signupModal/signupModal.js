@@ -18,8 +18,6 @@ export default class SignupModal extends LightningElement {
         
         let signupForm = this.template.querySelector('c-signup-form');
 
-        signupForm.startSubmit();
-        
-        //this.successful = true;
+        signupForm.submitRegistration();
     }
 }

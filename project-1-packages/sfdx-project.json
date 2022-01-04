@@ -9,6 +9,13 @@
             "package": "RewardsRegistration",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
+            "default": false
+        },
+        {
+            "path": "CommunitySite",
+            "package": "CommunitySite",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
             "default": true
         }
     ],
@@ -17,6 +24,7 @@
     "sfdcLoginUrl": "https://resilient-koala-bqenr5-dev-ed.my.salesforce.com/",
     "sourceApiVersion": "52.0",
     "packageAliases": {
-        "RewardsRegistration": "0Ho5f000000fxf0CAA"
+        "RewardsRegistration": "0Ho5f000000fxf0CAA",
+        "CommunitySite": "0Ho5f000000fxfyCAA"
     }
 }
