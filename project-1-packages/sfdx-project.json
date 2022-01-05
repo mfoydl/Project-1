@@ -25,6 +25,7 @@
     "sourceApiVersion": "52.0",
     "packageAliases": {
         "RewardsRegistration": "0Ho5f000000fxf0CAA",
-        "CommunitySite": "0Ho5f000000fxfyCAA"
+        "CommunitySite": "0Ho5f000000fxfyCAA",
+        "CommunitySite@0.1.0-1": "04t5f00000044yDAAQ"
     }
 }

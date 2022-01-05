@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Case Opened</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Reason</field>
+                <operation>notEqual</operation>
+                <value>Feedback</value>
+            </criteriaItems>
+            <replyToEmail>customer_service@example.com</replyToEmail>
+            <senderEmail>miles@foydl.com</senderEmail>
+            <senderName>Customer Service</senderName>
+            <template>unfiled$public/Case_Created</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Reason</field>
+                <operation>notEqual</operation>
+                <value>Feedback</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email</value>
+            </criteriaItems>
+            <replyToEmail>miles@foydl.com</replyToEmail>
+            <senderEmail>miles@foydl.com</senderEmail>
+            <senderName>Customer Service</senderName>
+            <template>unfiled$public/Case_Created</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

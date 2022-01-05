@@ -25,4 +25,14 @@ public without sharing class ProductHelper {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Product2> getProductsByType(String type){
+        try {
+            return [SELECT name,description FROM Product2];
+            
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }

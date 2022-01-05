@@ -4,6 +4,10 @@
 
 package.xml
 
+**/profiles
+
+/profiles.testProfile
+
 # LWC configuration files
 **/jsconfig.json
 **/.eslintrc.json

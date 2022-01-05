@@ -1,0 +1,23 @@
+.item-description{
+    padding: .75rem;
+}
+
+.item-description p{
+    padding: .5rem;
+    padding-left: 1.25rem;
+}
+
+.menu-item-container{
+    width: 75%;
+    height: 15vh;
+}
+
+.item-image{
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    width: 15vh;
+}
+
+.slds-grid{
+    height: 100%;
+}
