@@ -9,7 +9,7 @@ export default class SeasonalItem extends LightningElement {
 
     @api recordId;
 
-    @api image = 'https://static.parade.com/wp-content/uploads/2018/12/free-christmas-coffee-ftr.jpg';
+    @api imagePath = 'https://static.parade.com/wp-content/uploads/2018/12/free-christmas-coffee-ftr.jpg';
 
     @wire(getRecord, {recordId: "$recordId", fields: [PRODUCT_NAME_FIELD, PRODUCT_DESCRIPTION_FIELD]})
     product;
