@@ -18,12 +18,12 @@
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
     <indexPage>CommunitiesLanding</indexPage>
-    <masterLabel>test</masterLabel>
+    <masterLabel>coffee shop</masterLabel>
     <redirectToCustomDomain>false</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>test-msaoy1edgfnc@example.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>test-msaoy1edgfnc@example.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>test-muy6plqxkyhd@example.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>test-muy6plqxkyhd@example.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>coffeeshop-developer-edition</subdomain>
+    <subdomain>coffeeshop2-developer-edition</subdomain>
 </CustomSite>

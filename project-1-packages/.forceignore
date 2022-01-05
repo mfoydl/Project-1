@@ -4,7 +4,9 @@
 
 package.xml
 
-**/profiles
+**/navigationMenus
+**/appMenus
+**/networkBranding
 
 /profiles.testProfile
 
