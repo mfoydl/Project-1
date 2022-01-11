@@ -1,0 +1,29 @@
+:host{
+    --main-color: #F9F7F3;
+    --secondary-color: #5E6162;
+    --main-accent: #BDF0D6;
+    --secondary-accent: #94756F;
+}
+
+.seasonal-display{
+    /*height: var(--component-row-height);*/
+    padding: 8vh 1vw;
+    background-color: var(--main-accent);
+}
+
+.seasonal-title{
+    background-color: var(--secondary-accent);
+    display: flex;
+}
+
+.seasonal-title h1{
+    transform: rotate(-90deg);
+}
+
+.title-container{
+    width: 100%;
+}
+
+.title-container p{
+    font-size: 5vh;
+}

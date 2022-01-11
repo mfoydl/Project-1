@@ -1,0 +1,31 @@
+:host{
+    --main-color: #F9F7F3;
+    --secondary-color: #5E6162;
+    --main-accent: #BDF0D6;
+    --secondary-accent: #94756F;
+}
+
+.seasonal-item{
+    width: 100%;
+}
+.seasonal-image{
+    height: 80%;
+    border-radius: inherit;
+}
+
+.seasonal-item{
+    padding: .75rem;
+    background: var(--secondary-color);
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.seasonal-item:hover{
+    transform: scale(1.01);
+    filter: drop-shadow(4px 4px 8px var(--secondary-color));
+}
+
+.description-container h3{
+    padding: .4rem 0;
+    font-weight: bold;
+}

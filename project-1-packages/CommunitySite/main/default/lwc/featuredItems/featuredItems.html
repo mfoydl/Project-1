@@ -1,0 +1,22 @@
+<template>
+    <div class="">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+            <span class="slds-text-heading_large">Try Something NEW</span>
+            <template if:true = {products.data}>
+                <lightning-carousel>
+                        <template for:each={products.data} for:item="item">
+                            <lightning-carousel-image
+                                key = {item.Name}
+                                src = {imageURL}
+                                header = {item.Name}
+                                description = {item.Description}
+                                alternative-text = {item.Description}
+                                href = "#">
+                            </lightning-carousel-image>
+                        </template>
+                </lightning-carousel>
+            </template>
+        </div>
+    </div>
+    
+</template>

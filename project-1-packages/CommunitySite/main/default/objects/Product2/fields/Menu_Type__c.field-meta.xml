@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Menu_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Menu Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>coffee</fullName>
+                <default>false</default>
+                <label>coffee</label>
+            </value>
+            <value>
+                <fullName>sandwich</fullName>
+                <default>false</default>
+                <label>sandwich</label>
+            </value>
+            <value>
+                <fullName>snacks</fullName>
+                <default>false</default>
+                <label>snacks</label>
+            </value>
+            <value>
+                <fullName>sweets</fullName>
+                <default>false</default>
+                <label>sweets</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

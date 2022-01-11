@@ -1,0 +1,38 @@
+:host{
+    --main-color: #F9F7F3;
+    --secondary-color: #5E6162;
+    --main-accent: #BDF0D6;
+    --secondary-accent: #94756F;
+}
+
+.rewards-card{
+    padding: 1rem;
+}
+
+.rewards-card ul{
+    padding: 1rem 2rem;
+}
+
+.rewards-card li{
+    margin-bottom: 1rem;
+}
+
+.rewards-card svg{
+    fill: var(--secondary-accent);
+}
+
+.rewards-card h1:first-of-type{
+    margin-bottom: 2rem;
+}
+
+button{
+    background-color: var(--main-accent);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+button:hover{
+    background-color: aquamarine;
+    border-color: black;
+    color: black;
+}

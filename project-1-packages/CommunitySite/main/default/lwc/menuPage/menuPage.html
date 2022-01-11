@@ -1,0 +1,28 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-vertical-navigation selected-item="coffee" onselect={handleSelect}>
+                <lightning-vertical-navigation-section label="Menu">
+                    <lightning-vertical-navigation-item label="Espresso  Coffee" name="coffee"></lightning-vertical-navigation-item>
+                    <lightning-vertical-navigation-item label="Sandwiches" name="sandwiches"></lightning-vertical-navigation-item>
+                    <lightning-vertical-navigation-item label="Snacks" name="snacks"></lightning-vertical-navigation-item>
+                    <lightning-vertical-navigation-item label="Sweets" name="sweets"></lightning-vertical-navigation-item>
+                </lightning-vertical-navigation-section>
+            </lightning-vertical-navigation>
+        </div>
+        
+        <div if:true = {isCoffeeTab} class="slds-col slds-size_4-of-5">
+            <c-menu-list type="coffee"></c-menu-list>
+        </div>
+        <div if:true = {isSandwichTab} class="slds-col slds-size_4-of-5">
+            <c-menu-list type="sandwich"></c-menu-list>
+        </div>
+        <div if:true = {isSnackTab} class="slds-col slds-size_4-of-5">
+            <c-menu-list type="snacks"></c-menu-list>
+        </div>
+        <div if:true = {isSweetsTab} class="slds-col slds-size_4-of-5">
+            <c-menu-list type="sweets"></c-menu-list>
+        </div>
+
+    </div>
+</template>

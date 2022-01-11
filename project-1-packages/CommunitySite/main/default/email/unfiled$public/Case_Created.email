@@ -1,0 +1,3 @@
+Hello {!Contact.Salutation} {!Contact.LastName},
+
+Thank you for sharing your concerns with us! A service representative will contact you soon to follow up with your issue.
