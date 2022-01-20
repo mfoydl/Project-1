@@ -21,15 +21,19 @@ List of features ready and TODOs for future development
 * Awesome feature 3
 
 ## Getting Started
-   
-(include git clone command)
-(include all environment setup steps)
 
-> Be sure to include BOTH Windows and Unix command  
-> Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
+Supporting Software Requirements:
 
-- All the `code` required to get started
-- Images of what it should look like
+* SFDX CLI
+* Node.js
+
+Setup:
+
+* An Org authorized as a Devhub with Unlocked packages allowed
+
+Installation Instructions:
+
+* sfdx force:source:install <current-package-ID>
 
 ## Usage
 
