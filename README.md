@@ -33,7 +33,7 @@ Setup:
 
 Installation Instructions:
 
-* sfdx force:source:install <current-package-ID>
+* sfdx force:source:install "current-package-ID"
 
 ## Usage
 
